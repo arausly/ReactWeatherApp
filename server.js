@@ -1,10 +1,29 @@
 var express = require('express');
 
-var App = express();
+// the app
 
-App.use(express.static('public'));
+let myApp  = express();
 
+// expose the folder
 
-App.listen(9000,function(){
-    console.log('running on port 9000, this is so cool')
+myApp.use(myApp.static('public'));
+
+// specify  port 
+
+let port = process.env.PORT  || 9000;
+
+// redirect the http traffic
+
+myApp.use(function(req,res,next){
+    if(req.header['x-forwarded-proto'] === 'http'){
+        next(); 
+    }else{
+         res.redirect(` http://${res.hostname}${res.url}`);
+    }
+})
+
+// express's ability to listen
+
+myApp.listen(port, function(){
+    console.log(`listening on port ${port},yea`);
 });
