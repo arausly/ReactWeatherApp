@@ -6,7 +6,7 @@ let myApp  = express();
 
 // expose the folder
 
-myApp.use(myApp.static('public'));
+myApp.use(express.static('public'));
 
 // specify  port 
 
@@ -18,7 +18,7 @@ myApp.use(function(req,res,next){
     if(req.header['x-forwarded-proto'] === 'http'){
         next(); 
     }else{
-         res.redirect(` http://${res.hostname}${res.url}`);
+         res.redirect(`http://${res.hostname}${res.url}`);
     }
 })
 
