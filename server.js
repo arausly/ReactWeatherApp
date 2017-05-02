@@ -20,7 +20,7 @@ myApp.use(function(req,res,next){
     }else{
          res.redirect(`http://${res.hostname}${res.url}`);
     }
-})
+});
 
 // express's ability to listen
 
