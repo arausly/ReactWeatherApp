@@ -11825,20 +11825,22 @@ module.exports = getIteratorFn;
 
 var React = __webpack_require__(5);
 
-var About = React.createClass({
-  displayName: 'About',
-  render: function render() {
-    return React.createElement(
+var About = function About(props) {
+   return React.createElement(
       'div',
       null,
       React.createElement(
-        'h3',
-        null,
-        'About Component'
+         'h3',
+         null,
+         'About Component'
+      ),
+      React.createElement(
+         'p',
+         null,
+         'This is the about component'
       )
-    );
-  }
-});
+   );
+};
 
 module.exports = About;
 
@@ -11851,20 +11853,17 @@ module.exports = About;
 
 var React = __webpack_require__(5);
 
-var Example = React.createClass({
-  displayName: 'Example',
-  render: function render() {
-    return React.createElement(
+var Example = function Example(props) {
+   return React.createElement(
       'div',
       null,
       React.createElement(
-        'h3',
-        null,
-        'Example Component'
+         'h3',
+         null,
+         'Example Component'
       )
-    );
-  }
-});
+   );
+};
 
 module.exports = Example;
 
