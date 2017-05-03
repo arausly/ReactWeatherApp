@@ -1,5 +1,5 @@
 
-var{Link} = require('react-router-dom');
+var {Link} = require('react-router-dom');
 import React,{Component} from 'react';
 
  class NavBar extends Component{
@@ -28,7 +28,7 @@ import React,{Component} from 'react';
                            <input type = "submit" className = "button" value = "Get Weather"/>    
                          </li> 
                      </ul>     
-                    </form>    
+                    </form>   
                 </div>    
             </div>    
         );
