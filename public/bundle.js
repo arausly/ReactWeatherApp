@@ -11918,17 +11918,17 @@ var React = __webpack_require__(6);
 
 var About = function About(props) {
    return React.createElement(
-      'div',
+      "div",
       null,
       React.createElement(
-         'h3',
-         null,
-         'About Component'
+         "h1",
+         { className: "text-center" },
+         "About Component"
       ),
       React.createElement(
-         'p',
+         "p",
          null,
-         'This is the about component'
+         "This is the about component"
       )
    );
 };
@@ -12213,7 +12213,7 @@ var Weather = React.createClass({
             if (isLoading) {
                 return React.createElement(
                     'h3',
-                    null,
+                    { className: 'text-center' },
                     'Fetching Data...'
                 );
             } else if (temp && msg) {
@@ -12224,8 +12224,8 @@ var Weather = React.createClass({
             'div',
             null,
             React.createElement(
-                'h3',
-                null,
+                'h1',
+                { className: 'text-center' },
                 'Get Weather'
             ),
             React.createElement(WeatherForm, { onSearch: this.handleUpdate }),
@@ -12262,11 +12262,11 @@ var WeatherForm = React.createClass({
             null,
             React.createElement(
                 'form',
-                null,
+                { onSubmit: this.onSubmitForm },
                 React.createElement('input', { type: 'text', placeholder: 'Enter city name', ref: 'input' }),
                 React.createElement(
                     'button',
-                    { onClick: this.onSubmitForm },
+                    { className: 'button expanded' },
                     'Get Weather'
                 )
             )
@@ -12286,21 +12286,21 @@ module.exports = WeatherForm;
 var React = __webpack_require__(6);
 
 var WeatherReport = React.createClass({
-    displayName: 'WeatherReport',
+    displayName: "WeatherReport",
     render: function render() {
         var _props = this.props,
             msg = _props.msg,
             temp = _props.temp;
 
         return React.createElement(
-            'div',
+            "div",
             null,
             React.createElement(
-                'h3',
-                null,
-                'it\'s ',
+                "h3",
+                { className: "text-center" },
+                "it's ",
                 temp,
-                ' degrees fahrenheit in ',
+                " degrees fahrenheit in ",
                 msg
             )
         );

@@ -5,7 +5,7 @@ var WeatherReport = React.createClass({
         var {msg,temp} = this.props;
         return(
                 <div>
-                   <h3>it's {temp} degrees fahrenheit in {msg}</h3>
+                   <h3 className ="text-center">it's {temp} degrees fahrenheit in {msg}</h3>
                 </div>    
         );
     } 
