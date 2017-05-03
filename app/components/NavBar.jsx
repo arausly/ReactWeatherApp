@@ -1,17 +1,40 @@
-var React = require('react');
-var{Link} = require('react-router-dom');
 
-var NavBar = React.createClass({
+var{Link} = require('react-router-dom');
+import React,{Component} from 'react';
+
+ class NavBar extends Component{
+     onSearch(e){
+         e.preventDefault();
+         alert('not working yet');
+     }
     render(){
         return(
-            <div>
-               <h2>NavBar Component</h2>
-                <Link to ='/' activeClassName = "active" activeStyle = {{fontWeight:'bold'}}>Get Weather</Link>
-                <Link to ='/about' activeClassName= "active" activeStyle ={{fontWeight:'bold'}}>About</Link>
-                <Link to='/Example' activeClassName = "active" activeStyle ={{fontWeight:'bold'}}>Example</Link>
+            <div className = "top-bar">
+                <div className = "top-bar-left">
+                    <ul className = "menu">
+                        <li className = "menu-text">Weather App</li>
+                        <li> <Link to ='/' activeClassName = "active" activeStyle = {{fontWeight:'bold'}}>Get Weather</Link></li>
+                        <li><Link to ='/about' activeClassName= "active" activeStyle ={{fontWeight:'bold'}}>About</Link></li>
+                        <li> <Link to='/Example' activeClassName = "active" activeStyle ={{fontWeight:'bold'}}>Example</Link></li>
+                    </ul>    
+                </div>
+                <div className = "top-bar-right">
+                    <form onSubmit = {this.onSearch}>
+                     <ul className = "menu">    
+                        <li>
+                           <input type ="text" placeholder = "search weather"/>
+                        </li>
+                        <li>
+                           <input type = "submit" className = "button" value = "Get Weather"/>    
+                         </li> 
+                     </ul>     
+                    </form>    
+                </div>    
             </div>    
         );
-    }
-});
-                
-module.exports = NavBar;                
+    } 
+}
+
+module.exports = NavBar;        
+
+

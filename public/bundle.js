@@ -11994,40 +11994,114 @@ module.exports = Main;
 "use strict";
 
 
-var React = __webpack_require__(6);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(6);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var _require = __webpack_require__(97),
     Link = _require.Link;
 
-var NavBar = React.createClass({
-    displayName: 'NavBar',
-    render: function render() {
-        return React.createElement(
-            'div',
-            null,
-            React.createElement(
-                'h2',
-                null,
-                'NavBar Component'
-            ),
-            React.createElement(
-                Link,
-                { to: '/', activeClassName: 'active', activeStyle: { fontWeight: 'bold' } },
-                'Get Weather'
-            ),
-            React.createElement(
-                Link,
-                { to: '/about', activeClassName: 'active', activeStyle: { fontWeight: 'bold' } },
-                'About'
-            ),
-            React.createElement(
-                Link,
-                { to: '/Example', activeClassName: 'active', activeStyle: { fontWeight: 'bold' } },
-                'Example'
-            )
-        );
+var NavBar = function (_Component) {
+    _inherits(NavBar, _Component);
+
+    function NavBar() {
+        _classCallCheck(this, NavBar);
+
+        return _possibleConstructorReturn(this, (NavBar.__proto__ || Object.getPrototypeOf(NavBar)).apply(this, arguments));
     }
-});
+
+    _createClass(NavBar, [{
+        key: 'onSearch',
+        value: function onSearch(e) {
+            e.preventDefault();
+            alert('not working yet');
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            return _react2.default.createElement(
+                'div',
+                { className: 'top-bar' },
+                _react2.default.createElement(
+                    'div',
+                    { className: 'top-bar-left' },
+                    _react2.default.createElement(
+                        'ul',
+                        { className: 'menu' },
+                        _react2.default.createElement(
+                            'li',
+                            { className: 'menu-text' },
+                            'Weather App'
+                        ),
+                        _react2.default.createElement(
+                            'li',
+                            null,
+                            ' ',
+                            _react2.default.createElement(
+                                Link,
+                                { to: '/', activeClassName: 'active', activeStyle: { fontWeight: 'bold' } },
+                                'Get Weather'
+                            )
+                        ),
+                        _react2.default.createElement(
+                            'li',
+                            null,
+                            _react2.default.createElement(
+                                Link,
+                                { to: '/about', activeClassName: 'active', activeStyle: { fontWeight: 'bold' } },
+                                'About'
+                            )
+                        ),
+                        _react2.default.createElement(
+                            'li',
+                            null,
+                            ' ',
+                            _react2.default.createElement(
+                                Link,
+                                { to: '/Example', activeClassName: 'active', activeStyle: { fontWeight: 'bold' } },
+                                'Example'
+                            )
+                        )
+                    )
+                ),
+                _react2.default.createElement(
+                    'div',
+                    { className: 'top-bar-right' },
+                    _react2.default.createElement(
+                        'form',
+                        { onSubmit: this.onSearch },
+                        _react2.default.createElement(
+                            'ul',
+                            { className: 'menu' },
+                            _react2.default.createElement(
+                                'li',
+                                null,
+                                _react2.default.createElement('input', { type: 'text', placeholder: 'search weather' })
+                            ),
+                            _react2.default.createElement(
+                                'li',
+                                null,
+                                _react2.default.createElement('input', { type: 'submit', className: 'button', value: 'Get Weather' })
+                            )
+                        )
+                    )
+                )
+            );
+        }
+    }]);
+
+    return NavBar;
+}(_react.Component);
 
 module.exports = NavBar;
 
