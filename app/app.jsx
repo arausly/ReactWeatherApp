@@ -8,7 +8,7 @@ var Example = require('Example');
 
 
 require('style-loader!css-loader!foundation-sites/dist/css/foundation.min.css');
-$document.foundation();
+$(document).foundation();
 
 ReactDOM.render(
 <HashRouter>

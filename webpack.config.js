@@ -1,4 +1,5 @@
 var webpack = require('webpack');
+
 module.exports = {
     entry:[
             'script-loader!jquery/dist/jquery.min.js',
@@ -6,15 +7,16 @@ module.exports = {
             './app/app.jsx'
            ],
     externals:{
-         jqery:'jQuery',
+         jquery:'jQuery'
     },
     plugins:[
          new webpack.ProvidePlugin({
-        '$':'jquery',
-        'jQuery':'jquery'
+             '$' : 'jquery',
+             'jQuery' : 'jquery',
+             'jquery' : 'jquery'
         })
-        ],
-
+        
+    ],
     output:{
         path:__dirname,
         filename:'./public/bundle.js'
@@ -29,7 +31,7 @@ module.exports = {
             WeatherReport:'app/components/WeatherReport.jsx',
             About: 'app/components/About.jsx',
             Example: 'app/components/Example.jsx',
-            openWeatherMap: 'app/api/openWeatherMap.jsx',
+            openWeatherMap:'app/api/openWeatherMap.jsx',
         
         },
         extensions:['.js','.jsx']

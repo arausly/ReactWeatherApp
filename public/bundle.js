@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 270);
+/******/ 	return __webpack_require__(__webpack_require__.s = 271);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -11837,7 +11837,7 @@ module.exports = function(src) {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-
+/* WEBPACK VAR INJECTION */(function($) {
 
 var React = __webpack_require__(6);
 var ReactDOM = __webpack_require__(74);
@@ -11852,7 +11852,7 @@ var About = __webpack_require__(108);
 var Example = __webpack_require__(109);
 
 __webpack_require__(269);
-$document.foundation();
+$(document).foundation();
 
 ReactDOM.render(React.createElement(
     HashRouter,
@@ -11865,6 +11865,7 @@ ReactDOM.render(React.createElement(
         React.createElement(Route, { path: '/Example', component: Example })
     )
 ), document.getElementById('main'));
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(270)))
 
 /***/ }),
 /* 105 */
@@ -30191,6 +30192,12 @@ if(false) {
 
 /***/ }),
 /* 270 */
+/***/ (function(module, exports) {
+
+module.exports = jQuery;
+
+/***/ }),
+/* 271 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(106);
