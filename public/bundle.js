@@ -11894,7 +11894,7 @@ __webpack_require__(103)(__webpack_require__(269))
 
 var axios = __webpack_require__(117);
 
-var OPEN_WEATHER_MAP_URL = 'http://api.openweathermap.org/data/2.5/weather?appid=0c4f2ff6a69fb76a65872f377141b9d9&units=imperial';
+var OPEN_WEATHER_MAP_URL = 'https://crossorigin.me/http://api.openweathermap.org/data/2.5/weather?appid=0c4f2ff6a69fb76a65872f377141b9d9&units=imperial';
 
 module.exports = {
     getTemp: function getTemp(location) {
