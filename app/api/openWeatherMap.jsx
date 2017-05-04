@@ -15,7 +15,7 @@ module.exports = {
                 return res.data.main.temp;
             }
         },function(res){
-            return (res.data.message); 
+            throw new Error(res && ((res.response && res.response.data && (res.response.data.message || res.response.data)) || (res.code))) || res;
         });
     },
 };
