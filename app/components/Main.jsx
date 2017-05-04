@@ -1,8 +1,9 @@
 var React = require('react');
 var NavBar = require('NavBar');
+var {Component} = React;
 
 
-var Main = React.createClass({
+class Main extends Component{
     render(){
         return(
             <div>
@@ -15,6 +16,6 @@ var Main = React.createClass({
             </div>    
         ); 
     }
-});
+}
                 
 module.exports = Main;                

@@ -1,6 +1,7 @@
-var React  = require('react');
+import React,{Component} from 'react';
 
-var WeatherReport = React.createClass({
+
+class WeatherReport extends Component{
     render(){
         var {msg,temp} = this.props;
         return(
@@ -9,6 +10,6 @@ var WeatherReport = React.createClass({
                 </div>    
         );
     } 
-});
+}
 
 module.exports = WeatherReport;

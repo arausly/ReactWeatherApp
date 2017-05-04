@@ -13,9 +13,9 @@ import React,{Component} from 'react';
                 <div className = "top-bar-left">
                     <ul className = "menu">
                         <li className = "menu-text">Weather App</li>
-                        <li> <Link to ='/' activeClassName = "active" activeStyle = {{fontWeight:'bold'}}>Get Weather</Link></li>
-                        <li><Link to ='/about' activeClassName= "active" activeStyle ={{fontWeight:'bold'}}>About</Link></li>
-                        <li> <Link to='/Example' activeClassName = "active" activeStyle ={{fontWeight:'bold'}}>Example</Link></li>
+                        <li> <Link to ='/'>Get Weather</Link></li>
+                        <li><Link to ='/about'>About</Link></li>
+                        <li> <Link to='/Example'>Example</Link></li>
                     </ul>    
                 </div>
                 <div className = "top-bar-right">

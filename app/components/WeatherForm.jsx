@@ -1,8 +1,8 @@
-var React  = require('react');
+import React,{Component} from 'react';
 var ReactDOM = require('react-dom');
 
-var WeatherForm  = React.createClass({
-     onSubmitForm(e){
+class WeatherForm extends Component{
+     onSubmitForm = (e) =>{
          e.preventDefault();
          var weatherMsg = this.refs.input.value;
          if(weatherMsg.length > 0){
@@ -10,20 +10,20 @@ var WeatherForm  = React.createClass({
               this.props.onSearch(weatherMsg);
          }
 
-     },
+     }
     
     render(){
         return(
                   <div>
                     <form onSubmit ={this.onSubmitForm}>
-                     <input type = "text" placeholder = "Enter city name" ref="input" />    
-                        <button className="button expanded">
+                     <input type = "text" placeholder="Enter city name" ref="input" />    
+                        <button className="button medium-6 large-4 expanded">
                           Get Weather
                         </button>    
                     </form>
                   </div>        
         );
     }
-}); 
+} 
 
 module.exports = WeatherForm;
