@@ -15,10 +15,10 @@ let port = process.env.PORT  || 9000;
 // redirect the http traffic
 
 myApp.use(function(req,res,next){
-    if(req.header['x-forwarded-proto'] === 'http'){
-        next(); 
-    }else{
+    if(req.header['x-forwarded-proto'] === 'https'){
          res.redirect(`http://${res.hostname}${res.url}`);
+    }else{
+             next();
     }
 });
 
