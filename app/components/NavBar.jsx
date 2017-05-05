@@ -1,12 +1,21 @@
 
 var {Link} = require('react-router-dom');
 import React,{Component} from 'react';
+import QueryString from 'query-string';
+import PropTypes from 'prop-types';
 
  class NavBar extends Component{
-     onSearch(e){
-         e.preventDefault();
-         alert('not working yet');
-     }
+     
+     onSearch = (e) => {
+        e.preventDefault();
+        let location = this.refs.location.value;
+        let encodeLocation = encodeURIComponent(location);
+          if(location.length > 0){
+             this.refs.location.value = '';
+             window.location.hash =`#/?location=${encodeLocation}`;
+             
+          } 
+        }      
     render(){
         return(
             <div className = "top-bar">
@@ -22,10 +31,10 @@ import React,{Component} from 'react';
                     <form onSubmit = {this.onSearch}>
                      <ul className = "menu">    
                         <li>
-                           <input type ="text" placeholder = "search weather"/>
+                           <input type ="search" placeholder = "Search your city's weather" ref = "location" />
                         </li>
                         <li>
-                           <input type = "submit" className = "button" value = "Get Weather"/>    
+                           <input type = "submit" className = "button" value = "Get Weather" />    
                          </li> 
                      </ul>     
                     </form>   

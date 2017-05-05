@@ -10,6 +10,9 @@ var Example = require('Example');
 require('style-loader!css-loader!foundation-sites/dist/css/foundation.min.css');
 $(document).foundation();
 
+/*app styles*/
+require('style-loader!css-loader!sass-loader!appstyles');
+
 ReactDOM.render(
 <HashRouter>
       <Main>  

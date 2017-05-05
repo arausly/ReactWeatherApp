@@ -3,11 +3,13 @@ var WeatherForm = require('WeatherForm');
 var WeatherReport = require('WeatherReport');
 var openWeatherMap = require('openWeatherMap'); 
 var ErrorModal = require('errorModal');
+var queryString = require('query-string');
+var PropTypes = require('prop-types');
 
 class Weather extends Component{    
  constructor(props){
      super(props);
-     this.state = {
+     this.state = { 
          isLoading:false,
      }
      this.handleUpdate = this.handleUpdate.bind(this);
@@ -22,7 +24,7 @@ class Weather extends Component{
             getThis.setState({
                msg:weatherMsg,
                temp:temp,
-               isLoading:false 
+               isLoading:false      
            });
        },
         function(e){
@@ -32,10 +34,28 @@ class Weather extends Component{
              });
        });
        /*this.setState({
-       msg:weatherMsg,s
+       msg:weatherMsg,
        temp:7,
    });*/
  }
+componentDidMount(){
+ 
+ let location = queryString.parse(this.props.location.search);
+ let local_val = location.location;
+    if(local_val != null){
+        this.handleUpdate(local_val);
+        window.location.hash ='#/'
+    }
+}
+    
+componentWillReceiveProps(newProps){
+    let location = queryString.parse(this.props.location.search);
+ let local_val = location.location;
+    if(local_val != null){
+        this.handleUpdate(local_val);
+        window.location.hash ='#/'
+    }
+}
  render(){
      var {isLoading,temp, msg,errorMessage} = this.state;
       function renderMessage(){
@@ -53,7 +73,7 @@ class Weather extends Component{
      }
      return(
                <div>
-                  <h1 className="text-center">Get Weather</h1>
+                  <h1 className="text-center page-header">Get Weather</h1>
                     <WeatherForm onSearch ={this.handleUpdate} />
                      {renderMessage()}
                      {renderError()}
@@ -61,6 +81,5 @@ class Weather extends Component{
      );
  }  
 }
-
 
 module.exports = Weather;

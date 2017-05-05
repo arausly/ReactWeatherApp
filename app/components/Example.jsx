@@ -6,7 +6,7 @@ class Example extends Component{
      render(){
         return(
                    <div>
-                      <h1 className ="text-center">Examples</h1>
+                      <h1 className ="text-center page-header">Examples</h1>
                       <p>Some Examples to try out</p>
                       <ol>
                           <li>

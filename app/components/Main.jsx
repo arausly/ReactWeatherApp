@@ -3,11 +3,12 @@ var NavBar = require('NavBar');
 var {Component} = React;
 
 
+
 class Main extends Component{
-    render(){
+    render(){ 
         return(
             <div>
-                <NavBar />    
+                <NavBar takeValue = {this.handleValue}/>    
                  <div className = "row">  
                      <div className = "columns small-centered medium-6 large-4">
                         {this.props.children}
@@ -16,6 +17,5 @@ class Main extends Component{
             </div>    
         ); 
     }
-}
-                
+}       
 module.exports = Main;                
